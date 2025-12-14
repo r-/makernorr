@@ -1,0 +1,145 @@
+/* ===== Global Style ===== */
+
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f6f6f6;
+    color: #222;
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* ===== Containers ===== */
+
+.chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.08);
+}
+
+/* Kan återanvändas om du har andra vyer */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.08);
+}
+
+/* ===== Chat Window ===== */
+
+.chat-window {
+    height: 60vh;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* ===== Chat Messages ===== */
+
+.message {
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    max-width: 80%;
+    line-height: 1.4;
+}
+
+.message.user {
+    background: #d7ebff;
+    margin-left: auto;
+}
+
+.message.ai {
+    background: #eeeeee;
+}
+
+/* ===== Input Row ===== */
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+body.dance {
+  animation: wiggle 0.3s infinite;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ===== Thinking Animation ===== */
+
+.thinking {
+  font-style: italic;
+  color: #666;
+}
+
+.thinking .dots {
+  display: inline-block;
+}
+
+.thinking .dot {
+  animation: blink 1.4s infinite both;
+}
+
+.thinking .dot:nth-child(2) { animation-delay: 0.2s; }
+.thinking .dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+  0%, 60%, 100% { opacity: 0; }
+  30% { opacity: 1; }
+}
+
+/* ===== Buttons ===== */
+
+button {
+    padding: 12px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    background: #007bff;
+    color: #ffffff;
+    transition: background 0.15s;
+}
+
+button:hover {
+    background: #0063cc;
+}
+
+button:disabled {
+    background: #888888;
+    cursor: not-allowed;
+}
+
+/* Mikrofon-knappen i chatten */
+.mic-button {
+    width: 48px;
+    font-size: 24px;
+    padding: 0;
+}
