@@ -55,6 +55,8 @@ The app includes a modular tool system where the AI can execute actions:
 
 Tools are loaded dynamically and validated for security.
 
+Read more: https://maker.nu/gor-ai-assistenten-till-en-agent-med-tooluse/
+
 ## Android App
 
 To create an Android app:
