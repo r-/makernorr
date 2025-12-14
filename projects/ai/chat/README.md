@@ -1,35 +1,76 @@
-# AI Assistant Web App
+# AI Chat Agent with Tools
 
-A simple AI assistant web app that takes audio input and responds with text using OpenRouter and Google Gemini 3.
+A complete AI chat application with text and voice input, conversation memory, and tool execution capabilities. The AI can perform actions like dancing when requested.
 
 ## Features
 
-- Record audio from microphone
-- Send audio to AI model via OpenRouter
-- Display text response from AI
-- Client-side only, no backend required
+- **Text Chat**: Type messages and get AI responses
+- **Voice Input**: Record audio and get transcribed responses
+- **Conversation Memory**: Maintains context across messages
+- **Tool Execution**: AI can use tools like "dance" to perform actions
+- **Visual Feedback**: Thinking animation during API calls
+- **Responsive Design**: Works on desktop and mobile
 
 ## Setup
 
 1. Get an API key from [OpenRouter](https://openrouter.ai/)
-2. Replace `YOUR_OPENROUTER_API_KEY` in `js/openrouter.js` with your actual key
+2. Replace `YOUR_API_KEY_HERE` in `js/openrouter.js` with your key
 3. Open `index.html` in a modern web browser
 
 ## Usage
 
-1. Click "Start Recording"
-2. Speak for 3 seconds
-3. View the AI response
+- **Text**: Type a message and press Enter
+- **Voice**: Click the microphone button and speak for 3 seconds
+- **Tools**: Ask the AI to "dance" to see tool execution
 
 ## Project Structure
 
-- `index.html` - Main HTML page
-- `css/app.css` - Styles
-- `js/recorder.js` - Audio recording
-- `js/openrouter.js` - API communication
-- `js/assistant.js` - AI logic
-- `js/main.js` - Main app logic
+```
+www/
+├── index.html                 # Main HTML with chat UI
+├── css/
+│   └── app.css               # Styles including chat bubbles and animations
+├── js/
+│   ├── main.js               # App initialization and UI event handlers
+│   ├── chat.js               # Chat history and message rendering
+│   ├── assistant.js          # AI processing and tool execution
+│   ├── openrouter.js         # OpenRouter API communication
+│   ├── recorder.js           # Audio recording (WAV format)
+│   └── tools/                # Tool system
+│       ├── tools.json        # Tool manifest
+│       ├── index.js          # Tool loading and management
+│       ├── validate.js       # Tool validation
+│       └── dance/            # Dance tool
+│           ├── schema.js     # Tool description for AI
+│           └── tool.js       # Tool implementation
+└── README.md
+```
+
+## Tool System
+
+The app includes a modular tool system where the AI can execute actions:
+
+- **Dance Tool**: Makes the app wiggle when the AI decides to dance
+- **Extensible**: Easy to add new tools by creating subdirectories
+
+Tools are loaded dynamically and validated for security.
 
 ## Android App
 
-To turn this into an Android app, place the files in the `www` folder and build with Capacitor.
+To create an Android app:
+
+1. Place files in `/www` folder
+2. Use Capacitor to build the app
+3. Follow guides for Windows/Linux deployment
+### Windows:
+https://maker.nu/din-forsta-android-app-windows-version/
+### Linux:
+https://maker.nu/din-forsta-android-app-linux-version/
+
+## Architecture
+
+- **Sense**: User input (text/voice)
+- **Think**: AI processes with tool awareness
+- **Act**: AI executes validated tools
+
+With this we intend to implement a complete a simple AI agent loop.
