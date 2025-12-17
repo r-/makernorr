@@ -62,7 +62,7 @@ async function callAI(history, audioBase64 = null) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      model: "google/gemini-3-pro-preview",
+      model: "google/gemini-3-flash-preview",
       messages,
       stream: false
     })
@@ -83,4 +83,5 @@ async function callAI(history, audioBase64 = null) {
   content = content.replace(/^```json\s*/, "").replace(/```$/, "");
   console.log("Cleaned content:", content);
   return JSON.parse(content);
+
 }
